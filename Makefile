@@ -3,7 +3,7 @@ docker-build:
 	docker build -t local-runner .
 
 docker-run:
-	sudo chmod 0+re /var/run/docker.sock
+	sudo chmod 0+rw /var/run/docker.sock
 	git pull
 	docker run -v /var/run/docker.sock:/var/run/docker.sock --name=runner-1 --restart always -d -e ORG=https://github.com/Wealth-Management-Project-v1 -e NAME=runner-1 -e TOKEN=$(runner_token) github-runner
 	docker run -v /var/run/docker.sock:/var/run/docker.sock --name=runner-2 --restart always -d -e ORG=https://github.com/Wealth-Management-Project-v1 -e NAME=runner-2 -e TOKEN=$(runner_token) github-runner
