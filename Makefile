@@ -1,6 +1,6 @@
 docker-build:
 	git pull
-	docker build -t local-runner .
+	docker build -t github-runner .
 
 docker-run:
 	sudo chmod o+rw /var/run/docker.sock
